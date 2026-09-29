@@ -18,6 +18,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Byte-compile the plugin and tests
-        run: python -m compileall -q __init__.py schemas.py tools.py zephyr tests
+        run: python -m compileall -q __init__.py schemas.py zephyr tests
       - name: Run the test suite
         run: python -m unittest discover -v
