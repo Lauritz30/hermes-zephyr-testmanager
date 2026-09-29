@@ -1,0 +1,20 @@
+{
+  "name": "hermes-zephyr-testmanager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Release tooling for the hermes-zephyr-testmanager Hermes plugin (the plugin itself is Python).",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lauritz30/hermes-zephyr-testmanager.git"
+  },
+  "author": "Lauritz30",
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^7.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.0",
+    "semantic-release": "^24.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "python3 -c \"import pathlib,re,sys; v=sys.argv[1]; p=pathlib.Path('pyproject.toml'); p.write_text(re.sub(r'^version = \\\".*\\\"', 'version = \\\"'+v+'\\\"', p.read_text(), count=1, flags=re.M)); m=pathlib.Path('plugin.yaml'); m.write_text(re.sub(r'^version: .*', 'version: '+v, m.read_text(), count=1, flags=re.M))\" ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["pyproject.toml", "plugin.yaml"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}

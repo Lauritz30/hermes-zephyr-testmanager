@@ -1,0 +1,31 @@
+name: hermes-zephyr-testmanager
+version: 1.0.0
+manifest_version: 2
+api_version: 1
+description: >-
+  Zephyr Scale Cloud API integration for Hermes Agent — test cases, test cycles, test executions,
+  and safety-gated test-management writes.
+author: Lauritz30
+license: MIT
+homepage: https://github.com/Lauritz30/hermes-zephyr-testmanager
+tags: [zephyr, zephyr-scale, smartbear, test-management, uat]
+provides_tools:
+  - zephyr_doctor
+  - zephyr_list_test_cases
+  - zephyr_get_test_case
+  - zephyr_list_test_cycles
+  - zephyr_get_test_cycle
+  - zephyr_list_test_executions
+  - zephyr_get_test_execution
+  - zephyr_create_test_case
+  - zephyr_add_test_cases_to_cycle
+  - zephyr_update_test_execution_status
+provides_hooks:
+  - pre_tool_call
+config_schema:
+  config_path:
+    type: str
+    default: ""
+    description: >-
+      Absolute path to the sites config file. Empty uses
+      <HERMES_HOME>/hermes-zephyr-testmanager.json.

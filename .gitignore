@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.log
+.DS_Store
+node_modules/
+# Keep the real site config out of the repo — copy the .example.json instead.
+hermes-zephyr-testmanager.json
+.hermes/

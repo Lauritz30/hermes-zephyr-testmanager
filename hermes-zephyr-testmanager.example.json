@@ -1,0 +1,13 @@
+{
+  "defaultSite": "acme",
+  "safetyLevel": "confirm",
+  "mock": false,
+  "sites": [
+    {
+      "name": "acme",
+      "baseUrl": "https://api.zephyrscale.smartbear.com/v2",
+      "safetyLevel": "confirm",
+      "tokenEnv": "ZEPHYR_TOKEN_ACME"
+    }
+  ]
+}

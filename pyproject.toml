@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-zephyr-testmanager"
+version = "1.0.0"
+description = "Zephyr Scale Cloud API integration plugin for Hermes Agent — test cases, test cycles, test executions, and safety-gated writes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Lauritz30" }]
+keywords = ["hermes", "hermes-plugin", "zephyr", "zephyr-scale", "smartbear", "test-management"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+# No runtime dependencies: the client is stdlib-only (urllib), so the plugin never joins Hermes's
+# dependency-resolution set.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Lauritz30/hermes-zephyr-testmanager"
+Issues = "https://github.com/Lauritz30/hermes-zephyr-testmanager/issues"
+
+[tool.setuptools]
+# The plugin directory is the distribution root; these are the files a wheel would carry.
+py-modules = ["__init__", "schemas"]
+
+[tool.setuptools.packages.find]
+include = ["zephyr*"]
